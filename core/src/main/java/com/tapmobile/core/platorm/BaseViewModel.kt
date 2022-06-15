@@ -1,8 +1,8 @@
-package com.tapmobile.tapyoutube.core.platorm
+package com.tapmobile.core.platorm
 
 import androidx.lifecycle.ViewModel
-import com.tapmobile.tapyoutube.core.network.Error
-import com.tapmobile.tapyoutube.core.network.LoadingState
+import com.tapmobile.core.network.Error
+import com.tapmobile.core.network.LoadingState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

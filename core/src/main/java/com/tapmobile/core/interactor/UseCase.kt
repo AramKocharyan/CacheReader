@@ -1,7 +1,7 @@
-package com.tapmobile.tapyoutube.core.interactor
+package com.tapmobile.core.interactor
 
-import com.tapmobile.tapyoutube.core.network.Error
-import com.tapmobile.tapyoutube.core.network.State
+import com.tapmobile.core.network.Error
+import com.tapmobile.core.network.State
 import kotlinx.coroutines.*
 
 interface UseCase<out Type, in Params>  {

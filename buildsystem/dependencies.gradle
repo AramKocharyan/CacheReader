@@ -19,7 +19,7 @@ ext {
     constraintLayoutVersion = '2.1.4'
 
     // DI
-    hiltVersion = '2.38.1'
+    hiltVersion = '2.42'
 
     // Data
     gsonVersion = '2.3'

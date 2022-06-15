@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.tapmobile.youtube.databinding.ItemYoutubeVideoBinding
+import com.tapmobile.tapyoutube.databinding.ItemYoutubeVideoBinding
 import com.tapmobile.tapyoutube.features.search.domain.models.YoutubeVideoDto
 
 class YoutubeVideoAdapter : ListAdapter<YoutubeVideoAdapter.YoutubeVideoItem, RecyclerView.ViewHolder>(diffCallback) {

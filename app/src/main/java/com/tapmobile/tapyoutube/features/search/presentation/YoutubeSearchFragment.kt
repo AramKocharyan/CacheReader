@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
-import com.tapmobile.tapyoutube.core.platorm.BaseFragment
+import com.tapmobile.core.platorm.BaseFragment
 import com.tapmobile.tapyoutube.databinding.FragmentYoutubeVideoSearchBinding
 
 class YoutubeSearchFragment : BaseFragment() {

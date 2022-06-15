@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube.core.network
+package com.tapmobile.core.network
 
 sealed interface State<out F, out S> {
 

@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube.core.platorm
+package com.tapmobile.core.platorm
 
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint

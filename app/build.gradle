@@ -1,5 +1,8 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -8,6 +11,8 @@ android {
     compileSdk globalConfiguration.getAt("androidCompileSdkVersion")
 
     defaultConfig {
+        applicationId globalConfiguration.getAt("androidApplicationId")
+
         minSdk globalConfiguration.getAt("androidMinSdkVersion")
         targetSdk globalConfiguration.getAt("androidTargetSdkVersion")
         versionCode globalConfiguration.getAt("androidVersionCode")
@@ -39,6 +44,10 @@ android {
 }
 
 dependencies {
+    def hiltDependencies = rootProject.ext.hiltDependencies
+    kapt hiltDependencies.hiltCompiler
+    api hiltDependencies.hilt
+
     implementation project(':core')
 }
 

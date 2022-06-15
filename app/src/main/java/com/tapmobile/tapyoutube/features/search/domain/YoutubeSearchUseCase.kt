@@ -1,8 +1,8 @@
 package com.tapmobile.tapyoutube.features.search.domain
 
-import com.tapmobile.tapyoutube.core.interactor.UseCase
-import com.tapmobile.tapyoutube.core.network.Error
-import com.tapmobile.tapyoutube.core.network.State
+import com.tapmobile.core.interactor.UseCase
+import com.tapmobile.core.network.Error
+import com.tapmobile.core.network.State
 import com.tapmobile.tapyoutube.features.search.data.YoutubeSearchRepository
 import com.tapmobile.tapyoutube.features.search.domain.models.YoutubeVideoDto
 import javax.inject.Inject

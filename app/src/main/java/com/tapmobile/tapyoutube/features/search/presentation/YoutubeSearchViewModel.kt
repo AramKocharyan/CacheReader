@@ -1,8 +1,7 @@
 package com.tapmobile.tapyoutube.features.search.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.tapmobile.tapyoutube.core.network.LoadingState
-import com.tapmobile.tapyoutube.core.platorm.BaseViewModel
+import com.tapmobile.core.platorm.BaseViewModel
 import com.tapmobile.tapyoutube.features.search.domain.models.YoutubeVideoDto
 import com.tapmobile.tapyoutube.features.search.domain.YoutubeSearchUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

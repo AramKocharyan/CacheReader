@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube.core.network
+package com.tapmobile.core.network
 
 data class NetworkResponse<T>(
     val data: T,

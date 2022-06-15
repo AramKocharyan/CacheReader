@@ -1,6 +1,6 @@
-package com.tapmobile.tapyoutube.core.di
+package com.tapmobile.core.di
 
-import com.tapmobile.tapyoutube.BuildConfig
+import com.tapmobile.core.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

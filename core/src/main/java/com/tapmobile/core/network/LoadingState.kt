@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube.core.network
+package com.tapmobile.core.network
 
 class LoadingState private constructor(val status: Status) {
 

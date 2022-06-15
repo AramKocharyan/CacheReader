@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube.core.platorm
+package com.tapmobile.core.platorm
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

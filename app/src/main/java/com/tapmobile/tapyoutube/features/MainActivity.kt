@@ -2,8 +2,8 @@ package com.tapmobile.tapyoutube.features
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainerView
-import com.tapmobile.youtube.databinding.ActivityMainBinding
-import com.tapmobile.tapyoutube.core.platorm.BaseActivity
+import com.tapmobile.core.platorm.BaseActivity
+import com.tapmobile.tapyoutube.databinding.ActivityMainBinding
 import com.tapmobile.tapyoutube.features.search.presentation.YoutubeSearchFragment
 
 class MainActivity : BaseActivity() {
