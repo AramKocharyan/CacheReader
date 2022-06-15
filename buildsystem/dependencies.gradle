@@ -1,0 +1,70 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+ext {
+    //Android
+    androidMinSdkVersion = 24
+    androidTargetSdkVersion = 31
+    androidCompileSdkVersion = 31
+
+    // UI
+    recyclerViewVersion = '28.0.0'
+    appCompatVersion = '1.4.2'
+    lifecycleVersion = '2.4.1'
+    fragmentKtxVersion = '1.4.1'
+    materialVersion = '1.6.1'
+    constraintLayoutVersion = '2.1.4'
+
+    // DI
+    hiltVersion = '2.38.1'
+
+    // Data
+    gsonVersion = '2.3'
+    okHttpVersion = '4.10.0'
+    retrofitVersion = '2.9.0'
+
+    // Testing
+    robolectricVersion = '3.1.1'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+
+    // Development
+    leakCanaryVersion = '2.5'
+
+    uiDependencies = [
+            recyclerView    : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
+            lifecycle       : "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycleVersion}",
+            fragmentKtx     : "androidx.fragment:fragment-ktx:${fragmentKtxVersion}",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
+            material        : "com.google.android.material:material:${materialVersion}"
+    ]
+
+    hiltDependencies = [
+            hilt        : "com.google.dagger:hilt-android:${hiltVersion}",
+            hiltCompiler: "com.google.dagger:hilt-compiler:${hiltVersion}"
+    ]
+
+    dataDependencies = [
+            okHttp                  : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            gson                    : "com.google.code.gson:gson:${gsonVersion}",
+    ]
+
+    testDependencies = [
+            junit      : "junit:junit:${jUnitVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
+    ]
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+}
