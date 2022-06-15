@@ -11,10 +11,10 @@ interface YoutubeSearchRepository {
 }
 
 class YoutubeSearchRepositoryImpl
-@Inject constructor() : YoutubeSearchRepository {
+@Inject constructor(val service: YoutubeSearchService) : YoutubeSearchRepository {
 
     override suspend fun searchVideo(query: String?): State<Error, List<YoutubeVideoDto>> {
-
+        val result = service.search(query)
         return State.Failure(Error.ServerError)
     }
 }

@@ -2,7 +2,7 @@ package com.tapmobile.tapyoutube.features
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainerView
-import com.akocharyan.ultimatearch.databinding.ActivityMainBinding
+import com.tapmobile.youtube.databinding.ActivityMainBinding
 import com.tapmobile.tapyoutube.core.platorm.BaseActivity
 import com.tapmobile.tapyoutube.features.search.presentation.YoutubeSearchFragment
 
