@@ -1,7 +1,5 @@
 package com.akocharyan.ultimatearch.features.search.di
 
-import com.akocharyan.ultimatearch.features.search.data.YoutubeSearchRepository
-import com.akocharyan.ultimatearch.features.search.data.YoutubeSearchRepositoryImpl
 import com.akocharyan.ultimatearch.features.search.data.YoutubeSearchService
 import dagger.Module
 import dagger.Provides
