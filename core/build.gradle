@@ -6,26 +6,11 @@ plugins {
 }
 
 android {
-    def globalConfiguration = rootProject.extensions.getByName("ext")
-
-    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
-        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
-        versionCode globalConfiguration.getAt("androidVersionCode")
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding true
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
     }
 }
 

@@ -6,16 +6,15 @@ plugins {
 }
 
 android {
-    def globalConfiguration = rootProject.extensions.getByName("ext")
-
-    compileSdk globalConfiguration.getAt("androidCompileSdkVersion")
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        applicationId globalConfiguration.getAt("androidApplicationId")
+        applicationId "com.akocharyan.ultimatearch"
 
-        minSdk globalConfiguration.getAt("androidMinSdkVersion")
-        targetSdk globalConfiguration.getAt("androidTargetSdkVersion")
-        versionCode globalConfiguration.getAt("androidVersionCode")
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
+        versionCode 1
+        versionName "0.0.1"
     }
 
     buildTypes {
@@ -33,11 +32,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     buildFeatures {
         viewBinding true
     }
@@ -51,6 +45,3 @@ dependencies {
     implementation project(':core')
 }
 
-repositories {
-    google()
-}
