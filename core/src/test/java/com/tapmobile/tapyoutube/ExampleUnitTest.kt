@@ -1,4 +1,4 @@
-package com.tapmobile.tapyoutube
+package com.akocharyan.ultimatearch
 
 import org.junit.Test
 

@@ -14,11 +14,11 @@ buildscript {
 
 allprojects {
     ext {
-        androidApplicationId = 'com.tapmobile.tapyoutube'
+        androidApplicationId = 'com.akocharyan.ultimatearch'
         androidVersionCode = 1
         androidVersionName = "1.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
-        testApplicationId = 'com.tapmobile.tapyoutube.test'
+        testApplicationId = 'com.akocharyan.ultimatearch.test'
     }
 }
 
