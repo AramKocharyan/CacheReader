@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -15,21 +14,8 @@ android {
 }
 
 dependencies {
-    def hiltDependencies = rootProject.ext.hiltDependencies
-    def dataDependencies = rootProject.ext.dataDependencies
-    def uiDependencies = rootProject.ext.uiDependencies
-    def testDependencies = rootProject.ext.testDependencies
-    def developmentDependencies = rootProject.ext.developmentDependencies
-
-    kapt hiltDependencies.hiltCompiler
-
-    api hiltDependencies.hilt
-    api uiDependencies.values()
-    api dataDependencies.values()
-    api developmentDependencies.values()
-
-    testApi testDependencies.values()
-
+    api "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.lifecycleVersion}"
 }
 
 repositories {

@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -38,10 +37,6 @@ android {
 }
 
 dependencies {
-    def hiltDependencies = rootProject.ext.hiltDependencies
-    kapt hiltDependencies.hiltCompiler
-    api hiltDependencies.hilt
-
     implementation project(':core')
 }
 
