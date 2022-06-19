@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TapYoutube</string>
     <string name="dash">-</string>
+    <string name="title_home">Home</string>
 </resources>

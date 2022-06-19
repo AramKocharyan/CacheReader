@@ -5,6 +5,7 @@ ext {
     fragmentKtxVersion = '1.4.1'
     materialVersion = '1.6.1'
     constraintLayoutVersion = '2.1.4'
+    coreKtxVersion = '1.8.0'
 
     // DI
     hiltVersion = '2.42'
@@ -28,7 +29,8 @@ ext {
             lifecycle       : "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycleVersion}",
             fragmentKtx     : "androidx.fragment:fragment-ktx:${fragmentKtxVersion}",
             constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
-            material        : "com.google.android.material:material:${materialVersion}"
+            material        : "com.google.android.material:material:${materialVersion}",
+            core            : "androidx.core:core-ktx:${coreKtxVersion}"
     ]
 
     hiltDependencies = [
