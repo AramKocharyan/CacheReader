@@ -1,3 +1,16 @@
 plugins {
     id 'com.android.dynamic-feature'
 }
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+    }
+}
+
+dependencies {
+    implementation project(":core")
+}
