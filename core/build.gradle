@@ -6,6 +6,9 @@ plugins {
 }
 
 android {
+    def properties = new Properties()
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
@@ -22,17 +25,23 @@ android {
         }
     }
 
+    flavorDimensions "env"
+
     productFlavors {
         development {
-            buildConfigField("String", "MARVEL_API_BASE_URL", getLocalProperty("marvel.baseUrl"))
-            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", getLocalProperty("marvel.key.public"))
-            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", getLocalProperty("marvel.key.private"))
+            dimension "env"
+
+            buildConfigField("String", "MARVEL_API_BASE_URL", properties.getProperty("marvel.base.url"))
+            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", properties.getProperty("marvel.key.public"))
+            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", properties.getProperty("marvel.key.private"))
         }
 
         production {
-            buildConfigField("String", "MARVEL_API_BASE_URL", getLocalProperty("marvel.base.url"))
-            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", getLocalProperty("marvel.key.public"))
-            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", getLocalProperty("marvel.key.private"))
+            dimension "env"
+
+            buildConfigField("String", "MARVEL_API_BASE_URL", properties.getProperty("marvel.base.url"))
+            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", properties.getProperty("marvel.key.public"))
+            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", properties.getProperty("marvel.key.private"))
         }
     }
 }

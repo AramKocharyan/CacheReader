@@ -9,6 +9,17 @@ android {
         minSdk rootProject.ext.minSdkVersion
         targetSdk rootProject.ext.targetSdkVersion
     }
+
+    flavorDimensions "env"
+
+    productFlavors {
+        development {
+            dimension "env"
+        }
+        production {
+            dimension "env"
+        }
+    }
 }
 
 dependencies {
