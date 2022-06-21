@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -10,6 +11,29 @@ android {
     defaultConfig {
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    productFlavors {
+        development {
+            buildConfigField("String", "MARVEL_API_BASE_URL", getLocalProperty("marvel.baseUrl"))
+            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", getLocalProperty("marvel.key.public"))
+            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", getLocalProperty("marvel.key.private"))
+        }
+
+        production {
+            buildConfigField("String", "MARVEL_API_BASE_URL", getLocalProperty("marvel.base.url"))
+            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", getLocalProperty("marvel.key.public"))
+            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", getLocalProperty("marvel.key.private"))
+        }
     }
 }
 
