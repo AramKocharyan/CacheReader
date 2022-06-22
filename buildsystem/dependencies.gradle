@@ -6,6 +6,10 @@ ext {
     materialVersion = '1.6.1'
     constraintLayoutVersion = '2.1.4'
     coreKtxVersion = '1.8.0'
+    composeVersion = '1.1.1'
+    composeActivityVersion = '1.4.0'
+    composeViewModelVersion = '2.4.1'
+    composeConstraintLayoutVersion = '1.0.1'
 
     // DI
     hiltVersion = '2.42'
@@ -25,12 +29,22 @@ ext {
     leakCanaryVersion = '2.5'
 
     uiDependencies = [
-            appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
-            lifecycle       : "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycleVersion}",
-            fragmentKtx     : "androidx.fragment:fragment-ktx:${fragmentKtxVersion}",
-            constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
-            material        : "com.google.android.material:material:${materialVersion}",
-            core            : "androidx.core:core-ktx:${coreKtxVersion}"
+            appCompat                   : "androidx.appcompat:appcompat:$appCompatVersion",
+            lifecycle                   : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion",
+            fragmentKtx                 : "androidx.fragment:fragment-ktx:$fragmentKtxVersion",
+            constraintLayout            : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            material                    : "com.google.android.material:material:$materialVersion",
+            core                        : "androidx.core:core-ktx:$coreKtxVersion",
+            compose                     : "androidx.compose.ui:ui:$composeVersion",
+            composePreview              : "androidx.compose.ui:ui-tooling:$composeVersion",
+            composeFoundation           : "androidx.compose.foundation:foundation:$composeVersion",
+            composeMaterial             : "androidx.compose.material:material:$composeVersion",
+            composeMaterialIcons        : "androidx.compose.material:material-icons-core:$composeVersion",
+            composeMaterialIconsExtended: "androidx.compose.material:material-icons-extended:$composeVersion",
+            composeActivity             : "androidx.activity:activity-compose:$composeActivityVersion",
+            composeViewModel            : "androidx.lifecycle:lifecycle-viewmodel-compose:$composeViewModelVersion",
+            composeLiveData             : "androidx.compose.runtime:runtime-livedata:$composeVersion",
+            composeConstraintLayout     : "androidx.constraintlayout:constraintlayout-compose:$composeConstraintLayoutVersion"
     ]
 
     hiltDependencies = [
