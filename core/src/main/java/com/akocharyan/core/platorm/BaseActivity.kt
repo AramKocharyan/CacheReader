@@ -8,13 +8,4 @@ import androidx.fragment.app.commitNow
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-abstract class BaseActivity : AppCompatActivity() {
-
-    abstract val fragmentContainerView: FragmentContainerView
-
-    protected fun addFragment(savedInstanceState: Bundle?, fragment: Fragment) =
-        savedInstanceState ?: supportFragmentManager.commitNow {
-            replace(fragmentContainerView.id, fragment)
-        }
-
-}
+abstract class BaseActivity : AppCompatActivity()
