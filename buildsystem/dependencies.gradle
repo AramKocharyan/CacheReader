@@ -11,6 +11,9 @@ ext {
     composeViewModelVersion = '2.4.1'
     composeConstraintLayoutVersion = '1.0.1'
 
+    // Navigation
+    navigationHiltVersion = '1.0.0'
+
     // DI
     hiltVersion = '2.42'
 
@@ -45,6 +48,10 @@ ext {
             composeViewModel            : "androidx.lifecycle:lifecycle-viewmodel-compose:$composeViewModelVersion",
             composeLiveData             : "androidx.compose.runtime:runtime-livedata:$composeVersion",
             composeConstraintLayout     : "androidx.constraintlayout:constraintlayout-compose:$composeConstraintLayoutVersion"
+    ]
+
+    navigationDependencies = [
+            navigationHilt: "androidx.hilt:hilt-navigation-fragment:$navigationHiltVersion"
     ]
 
     hiltDependencies = [
