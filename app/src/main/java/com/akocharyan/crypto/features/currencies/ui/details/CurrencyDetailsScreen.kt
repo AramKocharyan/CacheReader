@@ -49,7 +49,7 @@ fun CurrencyDetailsBody(
                 )
                 Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                     Text(
-                        text = currency?.name ?: "",
+                        text = currency?.name ?: "–",
                         style = MaterialTheme.typography.body1,
                     )
                     Text(
@@ -57,7 +57,7 @@ fun CurrencyDetailsBody(
                         style = MaterialTheme.typography.body1,
                     )
                     Text(
-                        text = currency?.symbol ?: "",
+                        text = currency?.symbol ?: "–",
                         style = MaterialTheme.typography.body1,
                     )
                 }
