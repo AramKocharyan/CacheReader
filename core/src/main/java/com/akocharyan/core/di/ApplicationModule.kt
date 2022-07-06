@@ -1,6 +1,7 @@
 package com.akocharyan.core.di
 
 import com.akocharyan.core.BuildConfig
+import com.akocharyan.core.network.util.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,7 +35,4 @@ class ApplicationModule {
         return okHttpClientBuilder.build()
     }
 
-    companion object {
-        private const val BASE_URL = "https://youtube.com/"
-    }
 }

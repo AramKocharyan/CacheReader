@@ -10,9 +10,11 @@ ext {
     composeActivityVersion = '1.4.0'
     composeViewModelVersion = '2.4.1'
     composeConstraintLayoutVersion = '1.0.1'
+    composeUiToolingVersion = '1.1.1'
 
     // Navigation
     navigationHiltVersion = '1.0.0'
+    navigationComposeVersion = '2.5.0'
 
     // DI
     hiltVersion = '2.42'
@@ -47,11 +49,13 @@ ext {
             composeActivity             : "androidx.activity:activity-compose:$composeActivityVersion",
             composeViewModel            : "androidx.lifecycle:lifecycle-viewmodel-compose:$composeViewModelVersion",
             composeLiveData             : "androidx.compose.runtime:runtime-livedata:$composeVersion",
-            composeConstraintLayout     : "androidx.constraintlayout:constraintlayout-compose:$composeConstraintLayoutVersion"
+            composeConstraintLayout     : "androidx.constraintlayout:constraintlayout-compose:$composeConstraintLayoutVersion",
+            composeUiToolingPreview: "androidx.compose.ui:ui-tooling-preview:$composeUiToolingVersion"
     ]
 
     navigationDependencies = [
-            navigationHilt: "androidx.hilt:hilt-navigation-fragment:$navigationHiltVersion"
+            navigationHilt: "androidx.hilt:hilt-navigation-compose:$navigationHiltVersion",
+            navigationCompose: "androidx.navigation:navigation-compose:$navigationComposeVersion"
     ]
 
     hiltDependencies = [
@@ -72,6 +76,10 @@ ext {
             assertj    : "org.assertj:assertj-core:${assertJVersion}",
             mockito    : "org.mockito:mockito-core:${mockitoVersion}",
             robolectric: "org.robolectric:robolectric:${robolectricVersion}",
+    ]
+
+    debugDependencies = [
+            composeUiTooling : "androidx.compose.ui:ui-tooling:$composeUiToolingVersion"
     ]
 
     developmentDependencies = [

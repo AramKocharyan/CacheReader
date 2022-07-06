@@ -8,17 +8,10 @@ interface UseCase<out Type, in Params>  {
 
     suspend fun run(params: Params): State<Error, Type>
 
-    operator fun invoke(
-        params: Params,
-        scope: CoroutineScope,
-        onResult: State<Error, Type>.() -> Unit
-    ) {
-        scope.launch(Dispatchers.Main) {
-            val deferred = async(Dispatchers.IO) {
-                run(params)
-            }
-            onResult(deferred.await())
-        }
+    operator fun invoke(scope: CoroutineScope, params: Params, onResult: State<Error, Type>.() -> Unit) {
+        val job = scope.async(Dispatchers.IO) { run(params) }
+        scope.launch(Dispatchers.Main) { onResult(job.await()) }
     }
 
+    object None
 }

@@ -1,12 +1,16 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.akocharyan.ultimatearch"
+        applicationId "com.akocharyan.crypto"
 
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
@@ -44,12 +48,18 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        compose true
     }
 
-    dynamicFeatures = [':features:home']
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.2.0"
+    }
 }
 
 dependencies {
+    def hiltDependencies = rootProject.ext.hiltDependencies
+    kapt hiltDependencies.hiltCompiler
+    implementation hiltDependencies.hilt
+
     implementation project(':core')
 }

@@ -30,27 +30,30 @@ android {
     productFlavors {
         development {
             dimension "env"
-
-            buildConfigField("String", "MARVEL_API_BASE_URL", properties.getProperty("marvel.base.url"))
-            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", properties.getProperty("marvel.key.public"))
-            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", properties.getProperty("marvel.key.private"))
         }
 
         production {
             dimension "env"
-
-            buildConfigField("String", "MARVEL_API_BASE_URL", properties.getProperty("marvel.base.url"))
-            buildConfigField("String", "MARVEL_API_KEY_PUBLIC", properties.getProperty("marvel.key.public"))
-            buildConfigField("String", "MARVEL_API_KEY_PRIVATE", properties.getProperty("marvel.key.private"))
         }
     }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.2.0"
+    }
+
 }
 
 dependencies {
     def hiltDependencies = rootProject.ext.hiltDependencies
     def dataDependencies = rootProject.ext.dataDependencies
     def uiDependencies = rootProject.ext.uiDependencies
+    def navigationDependencies = rootProject.ext.navigationDependencies
     def testDependencies = rootProject.ext.testDependencies
+    def debugDependencies = rootProject.ext.debugDependencies
     def developmentDependencies = rootProject.ext.developmentDependencies
 
     kapt hiltDependencies.hiltCompiler
@@ -58,8 +61,9 @@ dependencies {
     api hiltDependencies.hilt
     api uiDependencies.values()
     api dataDependencies.values()
-    api developmentDependencies.values()
-
+    api navigationDependencies.values()
+    developmentApi developmentDependencies.values()
+    debugApi debugDependencies.values()
     testApi testDependencies.values()
 }
 
