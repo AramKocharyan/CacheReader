@@ -6,6 +6,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -21,7 +23,8 @@ fun CurrencyDetailsBody(
     modifier: Modifier = Modifier,
     viewModel: CurrencyDetailsViewModel = hiltViewModel()
 ) {
-    val currency = viewModel.currencyLiveData.value
+    viewModel.loadCurrencyById(currencyId)
+    val currency by viewModel.currencyLiveData.observeAsState()
 
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
         Box(Modifier.padding(16.dp)) {
@@ -44,6 +47,20 @@ fun CurrencyDetailsBody(
                     style = MaterialTheme.typography.h2,
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
+                Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                    Text(
+                        text = currency?.name ?: "",
+                        style = MaterialTheme.typography.body1,
+                    )
+                    Text(
+                        text = "/",
+                        style = MaterialTheme.typography.body1,
+                    )
+                    Text(
+                        text = currency?.symbol ?: "",
+                        style = MaterialTheme.typography.body1,
+                    )
+                }
             }
         }
         Spacer(Modifier.height(10.dp))
