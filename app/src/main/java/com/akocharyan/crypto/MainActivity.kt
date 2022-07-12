@@ -11,8 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.akocharyan.core.platorm.BaseActivity
 import com.akocharyan.core.ui.theme.CryptoTheme
-import com.akocharyan.crypto.features.currencies.ui.CurrenciesScreen
-import com.akocharyan.crypto.features.currencies.ui.currenciesGraph
+import com.akocharyan.crypto.features.currencies.presenter.CurrenciesScreen
+import com.akocharyan.crypto.features.currencies.presenter.currenciesGraph
 
 class MainActivity : BaseActivity() {
 

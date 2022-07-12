@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.ui.details
+package com.akocharyan.crypto.features.currencies.presenter.details
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState

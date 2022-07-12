@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.di
+package com.akocharyan.crypto.features.currencies.domain.helper.di
 
 import com.akocharyan.crypto.features.currencies.domain.CurrenciesRepository
 import com.akocharyan.crypto.features.currencies.domain.CurrenciesRepositoryImpl

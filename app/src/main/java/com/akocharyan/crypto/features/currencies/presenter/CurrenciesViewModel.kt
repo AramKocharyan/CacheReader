@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.ui
+package com.akocharyan.crypto.features.currencies.presenter
 
 import androidx.lifecycle.viewModelScope
 import com.akocharyan.core.interactor.UseCase

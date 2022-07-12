@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.ui
+package com.akocharyan.crypto.features.currencies.presenter
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -17,7 +17,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.*
 import androidx.navigation.compose.composable
 import com.akocharyan.crypto.features.currencies.domain.model.Currency
-import com.akocharyan.crypto.features.currencies.ui.details.CurrencyDetailsBody
+import com.akocharyan.crypto.features.currencies.presenter.details.CurrencyDetailsBody
 
 enum class CurrenciesScreen {
     Currencies,

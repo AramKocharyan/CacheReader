@@ -1,16 +1,12 @@
-package com.akocharyan.crypto.features.currencies.ui.details
+package com.akocharyan.crypto.features.currencies.presenter.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.akocharyan.core.interactor.UseCase
 import com.akocharyan.core.platorm.BaseViewModel
-import com.akocharyan.crypto.features.currencies.domain.CurrenciesUseCase
 import com.akocharyan.crypto.features.currencies.domain.CurrencyDetailsUseCase
 import com.akocharyan.crypto.features.currencies.domain.model.Currency
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
