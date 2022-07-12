@@ -1,7 +1,7 @@
 package com.akocharyan.crypto.features.currencies.domain.helper.di
 
+import com.akocharyan.crypto.features.currencies.data.network.CurrenciesRepositoryImpl
 import com.akocharyan.crypto.features.currencies.domain.CurrenciesRepository
-import com.akocharyan.crypto.features.currencies.domain.CurrenciesRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
