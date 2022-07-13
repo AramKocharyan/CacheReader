@@ -27,7 +27,7 @@ enum class CacheScreen {
 }
 
 @Composable
-fun CurrenciesBody(viewModel: CacheViewModel = hiltViewModel()) {
+fun CacheBody(viewModel: CacheViewModel = hiltViewModel()) {
 
     val app = AppEnum.TELEGRAM
 
@@ -53,11 +53,11 @@ fun CurrenciesBody(viewModel: CacheViewModel = hiltViewModel()) {
             Text(text = "Cache", style = MaterialTheme.typography.h5)
         }
         LazyColumn {
-            items(cache) { currencyItem ->
+            items(cache) { cacheItem ->
                 Column(Modifier.fillParentMaxWidth()) {
                     CacheItem(
                         modifier = Modifier.fillParentMaxWidth(),
-                        item = currencyItem,
+                        item = cacheItem,
                     )
                     Divider(color = Color.Black)
                 }
@@ -86,6 +86,6 @@ private fun CacheItem(
 
 fun NavGraphBuilder.cacheGraph() {
     composable(CacheScreen.Cache.name) {
-        CurrenciesBody()
+        CacheBody()
     }
 }
