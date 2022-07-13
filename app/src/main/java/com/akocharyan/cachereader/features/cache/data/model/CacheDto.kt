@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.data.model
+package com.akocharyan.cachereader.features.cache.data.model
 
 data class CacheDto(
     val id: String,

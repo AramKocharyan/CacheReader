@@ -1,4 +1,4 @@
-package com.akocharyan.crypto
+package com.akocharyan.cachereader
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

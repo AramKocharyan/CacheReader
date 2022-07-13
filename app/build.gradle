@@ -10,7 +10,7 @@ android {
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.akocharyan.crypto"
+        applicationId "com.akocharyan.cachereader"
 
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion

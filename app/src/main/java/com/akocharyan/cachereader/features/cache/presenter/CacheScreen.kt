@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.presenter
+package com.akocharyan.cachereader.features.cache.presenter
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.akocharyan.crypto.features.currencies.data.model.CacheDto
-import com.akocharyan.crypto.features.currencies.domain.models.AppEnum
-import com.akocharyan.crypto.features.currencies.presenter.model.PermissionNotGranted
+import com.akocharyan.cachereader.features.cache.data.model.CacheDto
+import com.akocharyan.cachereader.features.cache.domain.models.AppEnum
+import com.akocharyan.cachereader.features.cache.presenter.model.PermissionNotGranted
 
 enum class CacheScreen {
     Cache

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Crypto</string>
+    <string name="app_name">CacheReader</string>
     <string name="currency_details_title">Currency</string>
     <string name="dash">-</string>
 </resources>

@@ -1,9 +1,9 @@
-package com.akocharyan.crypto.features.currencies.domain.helper.di
+package com.akocharyan.cachereader.features.cache.domain.helper.di
 
 import android.app.Application
 import android.content.ContentResolver
-import com.akocharyan.crypto.features.currencies.data.local.CacheRepositoryImpl
-import com.akocharyan.crypto.features.currencies.domain.CacheRepository
+import com.akocharyan.cachereader.features.cache.data.local.CacheRepositoryImpl
+import com.akocharyan.cachereader.features.cache.domain.CacheRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.akocharyan.crypto
+package com.akocharyan.cachereader
 
 import org.junit.Test
 

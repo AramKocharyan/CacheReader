@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Theme.Crypto" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="Theme.CacheReader" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:statusBarColor">@color/statusBarColor</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowBackground">?attr/colorSurface</item>

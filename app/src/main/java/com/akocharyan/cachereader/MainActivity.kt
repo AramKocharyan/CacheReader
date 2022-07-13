@@ -1,4 +1,4 @@
-package com.akocharyan.crypto
+package com.akocharyan.cachereader
 
 import android.content.Context
 import android.content.ContextWrapper
@@ -12,34 +12,34 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.akocharyan.core.platorm.BaseActivity
-import com.akocharyan.core.ui.theme.CryptoTheme
-import com.akocharyan.crypto.features.currencies.presenter.CacheScreen
-import com.akocharyan.crypto.features.currencies.presenter.cacheGraph
+import com.akocharyan.core.ui.theme.CacheReaderTheme
+import com.akocharyan.cachereader.features.cache.presenter.CacheScreen
+import com.akocharyan.cachereader.features.cache.presenter.cacheGraph
 
 class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CryptoApp()
+            CacheReaderApp()
         }
     }
 
 }
 
 @Composable
-fun CryptoApp() {
-    CryptoTheme {
+fun CacheReaderApp() {
+    CacheReaderTheme {
         val navController = rememberNavController()
 
         Scaffold { innerPadding ->
-            CryptoNavHost(navController, modifier = Modifier.padding(innerPadding))
+            CacheReaderNavHost(navController, modifier = Modifier.padding(innerPadding))
         }
     }
 }
 
 @Composable
-fun CryptoNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
+fun CacheReaderNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
         startDestination = CacheScreen.Cache.name,

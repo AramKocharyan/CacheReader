@@ -4,7 +4,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 
 @Composable
-fun CryptoTheme(content: @Composable () -> Unit) {
+fun CacheReaderTheme(content: @Composable () -> Unit) {
 
     MaterialTheme(colors = ColorPalette, content = content)
 }

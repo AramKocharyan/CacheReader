@@ -1,4 +1,4 @@
-package com.akocharyan.crypto.features.currencies.presenter
+package com.akocharyan.cachereader.features.cache.presenter
 
 import android.app.Activity
 import android.content.ContentResolver
@@ -7,13 +7,13 @@ import android.net.Uri
 import android.provider.DocumentsContract
 import androidx.activity.result.ActivityResult
 import androidx.lifecycle.viewModelScope
+import com.akocharyan.cachereader.features.cache.data.model.CacheDto
+import com.akocharyan.cachereader.features.cache.domain.CacheUseCase
+import com.akocharyan.cachereader.features.cache.domain.helper.Constants
+import com.akocharyan.cachereader.features.cache.domain.helper.extensions.getAppDirectoryPermission
+import com.akocharyan.cachereader.features.cache.domain.models.AppEnum
+import com.akocharyan.cachereader.features.cache.presenter.model.PermissionNotGranted
 import com.akocharyan.core.platorm.BaseViewModel
-import com.akocharyan.crypto.features.currencies.data.model.CacheDto
-import com.akocharyan.crypto.features.currencies.domain.CacheUseCase
-import com.akocharyan.crypto.features.currencies.domain.helper.Constants
-import com.akocharyan.crypto.features.currencies.domain.helper.extensions.getAppDirectoryPermission
-import com.akocharyan.crypto.features.currencies.domain.models.AppEnum
-import com.akocharyan.crypto.features.currencies.presenter.model.PermissionNotGranted
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -62,8 +62,8 @@ class CacheViewModel @Inject constructor(
         )
     }
 
-    private fun handleCache(currencies: List<CacheDto>) {
-        _cacheFlow.value = currencies
+    private fun handleCache(cache: List<CacheDto>) {
+        _cacheFlow.value = cache
     }
 
 }

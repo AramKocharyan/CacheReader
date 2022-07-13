@@ -1,9 +1,9 @@
-package com.akocharyan.crypto.features.currencies.data.local
+package com.akocharyan.cachereader.features.cache.data.local
 
 import android.content.ContentResolver
 import android.net.Uri
 import android.provider.DocumentsContract
-import com.akocharyan.crypto.features.currencies.data.model.CacheDto
+import com.akocharyan.cachereader.features.cache.data.model.CacheDto
 import javax.inject.Inject
 
 class CacheDataSource @Inject constructor(private val contentResolver: ContentResolver) {
