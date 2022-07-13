@@ -3,7 +3,7 @@ apply from: 'buildsystem/dependencies.gradle'
 buildscript {
     ext {
         compileSdkVersion = 31
-        minSdkVersion = 23
+        minSdkVersion = 21
         targetSdkVersion = 31
     }
 

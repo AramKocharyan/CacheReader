@@ -1,5 +1,7 @@
 package com.akocharyan.crypto
 
+import android.content.Context
+import android.content.ContextWrapper
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.padding
@@ -11,8 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.akocharyan.core.platorm.BaseActivity
 import com.akocharyan.core.ui.theme.CryptoTheme
-import com.akocharyan.crypto.features.currencies.presenter.CurrenciesScreen
-import com.akocharyan.crypto.features.currencies.presenter.currenciesGraph
+import com.akocharyan.crypto.features.currencies.presenter.CacheScreen
+import com.akocharyan.crypto.features.currencies.presenter.cacheGraph
 
 class MainActivity : BaseActivity() {
 
@@ -40,9 +42,15 @@ fun CryptoApp() {
 fun CryptoNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = CurrenciesScreen.Currencies.name,
+        startDestination = CacheScreen.Cache.name,
         modifier = modifier
     ) {
-        currenciesGraph(navController)
+        cacheGraph()
     }
+}
+
+fun Context.getActivity(): MainActivity? = when (this) {
+    is MainActivity -> this
+    is ContextWrapper -> baseContext.getActivity()
+    else -> null
 }

@@ -1,8 +1,8 @@
 package com.akocharyan.core.platorm
 
 import androidx.lifecycle.ViewModel
-import com.akocharyan.core.network.Error
-import com.akocharyan.core.network.LoadingState
+import com.akocharyan.core.util.network.Error
+import com.akocharyan.core.util.network.LoadingState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
