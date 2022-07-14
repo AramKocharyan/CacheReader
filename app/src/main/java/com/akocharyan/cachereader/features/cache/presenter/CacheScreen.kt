@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.akocharyan.cachereader.features.cache.data.model.CacheDto
+import com.akocharyan.cachereader.features.cache.data.model.sizeKB
 import com.akocharyan.cachereader.features.cache.domain.models.AppEnum
 import com.akocharyan.cachereader.features.cache.presenter.CacheViewModel.Companion.PAGE_SIZE
 import com.akocharyan.cachereader.features.cache.presenter.model.PermissionNotGranted
@@ -97,7 +98,11 @@ private fun CacheItem(
         Column {
             Text(
                 text = item.name,
-                style = MaterialTheme.typography.h6
+                style = MaterialTheme.typography.body1
+            )
+            Text(
+                text = item.sizeKB,
+                style = MaterialTheme.typography.body2
             )
         }
     }
