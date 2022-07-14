@@ -1,11 +1,9 @@
-package com.akocharyan.core.util
+package com.akocharyan.core.util.network
 
 import android.util.Log
-import com.akocharyan.core.util.network.Error
-import com.akocharyan.core.util.network.State
+import com.akocharyan.core.models.Error
+import com.akocharyan.core.models.State
 import retrofit2.Call
-
-const val BASE_URL = "https://jbwzx.github.io/MTT/"
 
 inline fun <T, R> request(
     call: Call<T>,

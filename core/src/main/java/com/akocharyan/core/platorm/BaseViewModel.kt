@@ -1,7 +1,7 @@
 package com.akocharyan.core.platorm
 
 import androidx.lifecycle.ViewModel
-import com.akocharyan.core.util.network.Error
+import com.akocharyan.core.models.Error
 import com.akocharyan.core.util.network.LoadingState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,11 +15,12 @@ abstract class BaseViewModel : ViewModel() {
     val loading: StateFlow<LoadingState> = _loading
 
     protected fun handleFailure(failure: Error) {
+        _loading.value = LoadingState.completed()
         _failure.value = failure
     }
 
-    protected fun handleLoading(failure: LoadingState) {
-        _loading.value = failure
+    protected fun handleLoading(loading: LoadingState) {
+        _loading.value = loading
     }
 
 }

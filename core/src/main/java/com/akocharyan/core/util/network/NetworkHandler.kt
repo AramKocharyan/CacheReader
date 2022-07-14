@@ -1,4 +1,4 @@
-package com.akocharyan.core.util
+package com.akocharyan.core.util.network
 
 import android.content.Context
 import android.net.NetworkCapabilities

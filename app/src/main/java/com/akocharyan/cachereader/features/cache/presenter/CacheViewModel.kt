@@ -5,7 +5,10 @@ import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 import android.provider.DocumentsContract
+import android.util.Log
 import androidx.activity.result.ActivityResult
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.akocharyan.cachereader.features.cache.data.model.CacheDto
 import com.akocharyan.cachereader.features.cache.domain.CacheUseCase
@@ -13,10 +16,10 @@ import com.akocharyan.cachereader.features.cache.domain.helper.Constants
 import com.akocharyan.cachereader.features.cache.domain.helper.extensions.getAppDirectoryPermission
 import com.akocharyan.cachereader.features.cache.domain.models.AppEnum
 import com.akocharyan.cachereader.features.cache.presenter.model.PermissionNotGranted
+import com.akocharyan.core.models.PagedList
 import com.akocharyan.core.platorm.BaseViewModel
+import com.akocharyan.core.util.network.LoadingState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,25 +28,29 @@ class CacheViewModel @Inject constructor(
     private val contentResolver: ContentResolver
 ) : BaseViewModel() {
 
-    private val _cacheFlow: MutableStateFlow<List<CacheDto>> = MutableStateFlow(emptyList())
-    val cacheFlow: StateFlow<List<CacheDto>> = _cacheFlow
+    private val _cacheLiveData: MutableLiveData<PagedList<CacheDto>> = MutableLiveData(PagedList(emptyList()))
+    val cacheLiveData: LiveData<PagedList<CacheDto>> = _cacheLiveData
 
-    fun getCache(app: AppEnum) {
+    fun getCache(app: AppEnum, nextPage: Int = 1, pageSize: Int = PAGE_SIZE) {
+        Log.d("CacheViewModel: ", "getCache")
         val permission = contentResolver.getAppDirectoryPermission(app)
         if (permission != null) {
-            cache(viewModelScope, CacheUseCase.Params(permission.uri)) { fold(::handleFailure, ::handleCache) }
+            handleLoading(LoadingState.loading())
+            cache(viewModelScope, CacheUseCase.Params(permission.uri, nextPage, pageSize)) {
+                fold(::handleFailure, ::handleCacheResult)
+            }
         } else {
             handleFailure(PermissionNotGranted(app))
         }
     }
 
-    fun handlePermissionGrantedResult(result: ActivityResult, app: AppEnum) {
+    fun persistGrantedPermission(result: ActivityResult): Boolean {
         if (result.resultCode == Activity.RESULT_OK) {
-            val data = result.data?.data ?: return
+            val data = result.data?.data ?: return false
             takePersistablePermission(data)
-            getCache(app)
+            return true
         } else {
-            handleFailure(PermissionNotGranted(app))
+            return false
         }
     }
 
@@ -62,8 +69,14 @@ class CacheViewModel @Inject constructor(
         )
     }
 
-    private fun handleCache(cache: List<CacheDto>) {
-        _cacheFlow.value = cache
+    private fun handleCacheResult(cache: PagedList<CacheDto>) {
+        Log.d("CacheViewModel ", "handleCacheResult")
+        _cacheLiveData.value = cache
+        handleLoading(LoadingState.completed())
+    }
+
+    companion object {
+        const val PAGE_SIZE = 20
     }
 
 }

@@ -1,4 +1,4 @@
-package com.akocharyan.core.util.network
+package com.akocharyan.core.models
 
 sealed interface State<out F, out S> {
 

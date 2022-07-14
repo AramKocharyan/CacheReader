@@ -50,11 +50,11 @@ ext {
             composeViewModel            : "androidx.lifecycle:lifecycle-viewmodel-compose:$composeViewModelVersion",
             composeLiveData             : "androidx.compose.runtime:runtime-livedata:$composeVersion",
             composeConstraintLayout     : "androidx.constraintlayout:constraintlayout-compose:$composeConstraintLayoutVersion",
-            composeUiToolingPreview: "androidx.compose.ui:ui-tooling-preview:$composeUiToolingVersion"
+            composeUiToolingPreview     : "androidx.compose.ui:ui-tooling-preview:$composeUiToolingVersion"
     ]
 
     navigationDependencies = [
-            navigationHilt: "androidx.hilt:hilt-navigation-compose:$navigationHiltVersion",
+            navigationHilt   : "androidx.hilt:hilt-navigation-compose:$navigationHiltVersion",
             navigationCompose: "androidx.navigation:navigation-compose:$navigationComposeVersion"
     ]
 
@@ -79,7 +79,7 @@ ext {
     ]
 
     debugDependencies = [
-            composeUiTooling : "androidx.compose.ui:ui-tooling:$composeUiToolingVersion"
+            composeUiTooling: "androidx.compose.ui:ui-tooling:$composeUiToolingVersion"
     ]
 
     developmentDependencies = [

@@ -1,7 +1,7 @@
 package com.akocharyan.core.interactor
 
-import com.akocharyan.core.util.network.Error
-import com.akocharyan.core.util.network.State
+import com.akocharyan.core.models.Error
+import com.akocharyan.core.models.State
 import kotlinx.coroutines.*
 
 interface UseCase<out Type, in Params> {
@@ -12,7 +12,7 @@ interface UseCase<out Type, in Params> {
         scope: CoroutineScope,
         params: Params,
         dispatcher: CoroutineDispatcher = Dispatchers.IO,
-        onResult: State<Error, Type>.() -> Unit
+        onResult: State<Error, Type>.() -> Unit = {}
     ) {
         val job = scope.async(dispatcher) { run(params) }
         scope.launch(Dispatchers.Main) { onResult(job.await()) }
