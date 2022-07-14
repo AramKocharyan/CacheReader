@@ -18,10 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.akocharyan.cachereader.features.cache.data.model.CacheDto
-import com.akocharyan.cachereader.features.cache.data.model.sizeKB
 import com.akocharyan.cachereader.features.cache.domain.models.AppEnum
 import com.akocharyan.cachereader.features.cache.presenter.CacheViewModel.Companion.PAGE_SIZE
 import com.akocharyan.cachereader.features.cache.presenter.model.PermissionNotGranted
+import com.akocharyan.cachereader.features.cache.presenter.model.sizeKB
 import com.akocharyan.core.util.network.LoadingState
 
 enum class CacheScreen {

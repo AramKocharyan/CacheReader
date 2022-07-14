@@ -6,6 +6,3 @@ data class CacheDto(
     val ext: String,
     val size: Long
 )
-
-val CacheDto.sizeKB: String
-    get() = String.format("%.2f KB", size / 1024f)
